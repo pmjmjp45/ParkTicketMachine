@@ -19,6 +19,9 @@ public class ConstClass {
 	/////////social number standard
 	static final int MALE_BEFORE = 1, FEMALE_BEFORE = 2, MALE_AFTER = 3, FEMALE_AFTER = 4;
 	
+	/////////gender
+	static final int MALE = 0, FEMALE = 1;
+	
 	///////Continue or End
 	static final int CONTINUE = 1;
 	

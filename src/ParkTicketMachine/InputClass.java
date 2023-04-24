@@ -13,11 +13,6 @@ public class InputClass {
 		scanner = new Scanner(System.in);
 	}
 	
-	public int InputLangSelect() {
-		P.print_langSelect();
-		return scanner.nextInt();
-	}
-	
 	public String inputDay() { // input day
 		String date = "";
 		while (true) {
@@ -40,12 +35,12 @@ public class InputClass {
 		return number;
 	}
 	
-	public int inputOption() { // input discount option
+	public int inputOption(int ageIndex) { // input discount option
 		int option = 0;
 		while (true) {
 			P.print_option();
 			option = scanner.nextInt();
-			if (option >= 1 && option <= 5) break;
+			if (V.setOption(option, ageIndex) == true) break;
 			P.printError();
 		}
 		return option;

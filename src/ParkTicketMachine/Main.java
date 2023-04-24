@@ -1,6 +1,7 @@
 package ParkTicketMachine;
-
+//// Font: MS Gothic
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Main {
 
@@ -23,8 +24,9 @@ public class Main {
 		Main M = new Main();
 		ArrayList<InfoClass> infolist = new ArrayList<>();
 		// language select
-		int langSelect = M.I.InputLangSelect();
-		M.L.setLanguage(langSelect);
+		Locale currentlocale = Locale.getDefault();
+		M.L.setLanguage(currentlocale.getCountry());
+		System.out.println("your locale : " + currentlocale.getCountry());
 		M.L.language();
 		
 		// date
@@ -38,14 +40,16 @@ public class Main {
 					, M.V.getBirthYear(), M.V.getBirthMonth(), M.V.getBirthDay(), M.V.getGeneration());
 			
 			// option for discount
-			int option = M.I.inputOption(); 
+			//M.V.setOption(M.I.inputOption(ageIndex), ageIndex)
+			int option = M.I.inputOption(ageIndex); 
 			
 			// ticket price
 			int ticketPrice = M.X.getTicketPrice(option, ageIndex, dayIndex);
 			
 			// number of ticket
-			M.V.setNumTicket(M.I.inputNumTicket(option), option);
-			int numTicket = M.V.getNumTicket();
+//			M.V.setNumTicket(M.I.inputNumTicket(option), option);
+//			int numTicket = M.V.getNumTicket();
+			int numTicket = M.I.inputNumTicket(option);
 			
 			// save ticket information
 			M.info = new InfoClass(dayIndex, ageIndex, ticketPrice, numTicket, option);

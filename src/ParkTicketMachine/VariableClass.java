@@ -11,6 +11,7 @@ public class VariableClass {
 	private int birthMonth;
 	private int birthDay;
 	private int generation;
+	private int gender;
 	// numTicket
 	private int numTicket;
 	
@@ -60,6 +61,11 @@ public class VariableClass {
 	            this.birthMonth = month;
 	            this.birthDay = day;
 	            this.generation = gene;
+	            if (gene == 1 || gene == 3) {
+	            	this.gender = ConstClass.MALE;
+	            } else {
+	            	this.gender = ConstClass.FEMALE;
+	            }
 			} else numBool = false;
 		} else {
 			numBool = false;
@@ -67,10 +73,25 @@ public class VariableClass {
 		return numBool;
 	}
 	
+	public boolean setOption(int option, int ageIndex) {
+		boolean optionBool;
+		
+		if (option >= 1 && option <= 5) {
+			if (option == 5 && (ageIndex != 0 || gender != ConstClass.FEMALE)) { // pregnancy option validation
+				optionBool = false;
+			} else {
+				optionBool = true;
+			}
+		} else {
+			optionBool = false;
+		}
+		return optionBool;
+	}
+	
 	public boolean setNumTicket(int inputNumTicket, int option) {
 		boolean numTicketBool;
 		
-		if (inputNumTicket > 0) {
+		if (inputNumTicket > 0) { // number limitations on Option
 			if (option == ConstClass.HANDICAPPED&& inputNumTicket > ConstClass.HANDICAPPED_LIMIT) {
 				numTicketBool = false;
 			} else if (option == ConstClass.HONORABLE && inputNumTicket > ConstClass.HONORABLE_LIMIT) {

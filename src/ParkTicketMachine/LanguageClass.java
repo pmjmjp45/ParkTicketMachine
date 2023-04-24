@@ -1,7 +1,7 @@
 package ParkTicketMachine;
 
 public class LanguageClass {
-	private static int LANGUAGE; 
+	private static String LANGUAGE; 
 	public static String INPUT_DAY_PRINT;
 	public static String INPUT_BIRTH_PRINT;
 	public static String MENU_TITLE;
@@ -29,12 +29,12 @@ public class LanguageClass {
 	public static String INFO_OPTION_PREGNANCY;
 
 	
-	public void setLanguage(int langSelect) {
+	public void setLanguage(String langSelect) {
 		LanguageClass.LANGUAGE = langSelect;
 	}
 	
 	public void language() {
-		if (LANGUAGE == 0) {
+		if (LANGUAGE.equals("US")) {
 			LanguageClass.INPUT_DAY_PRINT = "Enter the date you visit\nex)20230413";
 			LanguageClass.INPUT_BIRTH_PRINT = "Enter the 7 digits of your social number\nex)9004052";
 			LanguageClass.MENU_TITLE = "=====Discout Option=====";
@@ -61,32 +61,59 @@ public class LanguageClass {
 			LanguageClass.PRINT_TOTALNUMBER = "Total Amount : ";
 			LanguageClass.PRINT_TOTALPRICE = "Total Price : ";
 			
-		} else if (LANGUAGE == 1) {
-			LanguageClass.INPUT_DAY_PRINT = "¹æ¹®ÇÒ ³¯Â¥¸¦ °í¸£¼¼¿ä\n¿¹½Ã)20230413";
-			LanguageClass.INPUT_BIRTH_PRINT = "ÁÖ¹Îµî·Ï¹øÈ£ 7ÀÚ¸®¸¦ ÀÔ·ÂÇÏ¼¼¿ä\n¿¹½Ã)9004052";
-			LanguageClass.MENU_TITLE = "=====¿ì´ë »çÇ×=====";
-			LanguageClass.MENU_1 = "1. ÇØ´ç ¾øÀ½";
-			LanguageClass.MENU_2 = "2. Àå¾ÖÀÎ";
-			LanguageClass.MENU_3 = "3. ±¹°¡ À¯°øÀÚ";
-			LanguageClass.MENU_4 = "4. ´ÙÀÚ³à";
-			LanguageClass.MENU_5 = "5. ÀÓ»êºÎ";
-			LanguageClass.INPUT_NUMTICKET_PRINT = "±¸¸Å¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä";
-			LanguageClass.INPUT_CONTINUEOREND_PRINT = "°è¼Ó ±¸¸Å : 1 / Á¾·á : 0";
-			LanguageClass.PRINT_ENDMSG = "°¨»çÇÕ´Ï´Ù";
-			LanguageClass.PRINT_ERROR = "´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.";
-			LanguageClass.PRINT_ERROR_LIMIT = "¿ì´ë»çÇ× ÀÎ¿ø Á¦ÇÑ ÃÊ°ú";
-			LanguageClass.INFO_DAY_WEEKDAY = "ÁÖÁß±Ç";
-			LanguageClass.INFO_DAY_WEEKEND = "ÁÖ¸»±Ç";
-			LanguageClass.INFO_AGE_ADULT = "´ëÀÎ/Ã»¼Ò³â";
-			LanguageClass.INFO_AGE_CHILD = "¼ÒÀÎ / °æ·Î";
-			LanguageClass.INFO_AGE_BABY = "3¼¼¹Ì¸¸¹«·á";
-			LanguageClass.INFO_OPTION_NONE = "¿ì´ë »çÇ× ¾øÀ½";
-			LanguageClass.INFO_OPTION_HANDICAPPED = "Àå¾ÖÀÎ ¿ì´ë";
-			LanguageClass.INFO_OPTION_HONORABLE = "±¹°¡ À¯°øÀÚ ¿ì´ë";
-			LanguageClass.INFO_OPTION_MULTICHILD = "´ÙÀÚ³à ¿ì´ë";
-			LanguageClass.INFO_OPTION_PREGNANCY = "ÀÓ»êºÎ ¿ì´ë";
-			LanguageClass.PRINT_TOTALNUMBER = "ÃÑ ±¸¸Å ¼ö·® : ";
-			LanguageClass.PRINT_TOTALPRICE = "ÃÑ °áÁ¦ ±İ¾× : ";
+		} else if (LANGUAGE.equals("KR")) {
+			LanguageClass.INPUT_DAY_PRINT = "ë°©ë¬¸í•  ë‚ ì§œë¥¼ ê³ ë¥´ì„¸ìš”\nì˜ˆì‹œ)20230413";
+			LanguageClass.INPUT_BIRTH_PRINT = "ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ 7ìë¦¬ë¥¼ ì…ë ¥í•˜ì„¸ìš”\nì˜ˆì‹œ)9004052";
+			LanguageClass.MENU_TITLE = "=====ìš°ëŒ€ ì‚¬í•­=====";
+			LanguageClass.MENU_1 = "1. í•´ë‹¹ ì—†ìŒ";
+			LanguageClass.MENU_2 = "2. ì¥ì• ì¸";
+			LanguageClass.MENU_3 = "3. êµ­ê°€ ìœ ê³µì";
+			LanguageClass.MENU_4 = "4. ë‹¤ìë…€";
+			LanguageClass.MENU_5 = "5. ì„ì‚°ë¶€";
+			LanguageClass.INPUT_NUMTICKET_PRINT = "êµ¬ë§¤ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”";
+			LanguageClass.INPUT_CONTINUEOREND_PRINT = "ê³„ì† êµ¬ë§¤ : 1 / ì¢…ë£Œ : 0";
+			LanguageClass.PRINT_ENDMSG = "ê°ì‚¬í•©ë‹ˆë‹¤";
+			LanguageClass.PRINT_ERROR = "ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”.";
+			LanguageClass.PRINT_ERROR_LIMIT = "ìš°ëŒ€ì‚¬í•­ ì¸ì› ì œí•œ ì´ˆê³¼";
+			LanguageClass.INFO_DAY_WEEKDAY = "ì£¼ì¤‘ê¶Œ";
+			LanguageClass.INFO_DAY_WEEKEND = "ì£¼ë§ê¶Œ";
+			LanguageClass.INFO_AGE_ADULT = "ëŒ€ì¸/ì²­ì†Œë…„";
+			LanguageClass.INFO_AGE_CHILD = "ì†Œì¸ / ê²½ë¡œ";
+			LanguageClass.INFO_AGE_BABY = "3ì„¸ë¯¸ë§Œë¬´ë£Œ";
+			LanguageClass.INFO_OPTION_NONE = "ìš°ëŒ€ ì‚¬í•­ ì—†ìŒ";
+			LanguageClass.INFO_OPTION_HANDICAPPED = "ì¥ì• ì¸ ìš°ëŒ€";
+			LanguageClass.INFO_OPTION_HONORABLE = "êµ­ê°€ ìœ ê³µì ìš°ëŒ€";
+			LanguageClass.INFO_OPTION_MULTICHILD = "ë‹¤ìë…€ ìš°ëŒ€";
+			LanguageClass.INFO_OPTION_PREGNANCY = "ì„ì‚°ë¶€ ìš°ëŒ€";
+			LanguageClass.PRINT_TOTALNUMBER = "ì´ êµ¬ë§¤ ìˆ˜ëŸ‰ : ";
+			LanguageClass.PRINT_TOTALPRICE = "ì´ ê²°ì œ ê¸ˆì•¡ : ";
+			
+		} else if (LANGUAGE.equals("JP")) {
+			LanguageClass.INPUT_DAY_PRINT = "è¨ªå•ã™ã‚‹æ—¥ã‚’é¸ã³ãªã•ã„\nä¾‹) 20230413";
+			LanguageClass.INPUT_BIRTH_PRINT = "ä½æ°‘ç™»éŒ²ç•ªå·ã®7æ¡ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\nä¾‹ï¼‰9004052";
+			LanguageClass.MENU_TITLE = "=====å„ªå¾…æ¡ä»¶=====";
+			LanguageClass.MENU_1 = "1. è©²å½“ãªã—";
+			LanguageClass.MENU_2 = "2. éšœå®³è€…";
+			LanguageClass.MENU_3 = "3. å›½å®¶åŠŸåŠ´è€…";
+			LanguageClass.MENU_4 = "4. å¤šå­å®¶åº­";
+			LanguageClass.MENU_5 = "5. å¦Šå©¦";
+			LanguageClass.INPUT_NUMTICKET_PRINT = "è³¼å…¥æ•°é‡ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„";
+			LanguageClass.INPUT_CONTINUEOREND_PRINT = "ç¶™ç¶šè³¼å…¥ : 1 / çµ‚äº† : 0";
+			LanguageClass.PRINT_ENDMSG = "ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™";
+			LanguageClass.PRINT_ERROR = "å†åº¦å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚";
+			LanguageClass.PRINT_ERROR_LIMIT = "å„ªå¾…æ¡ä»¶äººæ•°åˆ¶é™ã‚’è¶…ãˆã¾ã—ãŸ";
+			LanguageClass.INFO_DAY_WEEKDAY = "å¹³æ—¥åˆ¸";
+			LanguageClass.INFO_DAY_WEEKEND = "é€±æœ«åˆ¸";
+			LanguageClass.INFO_AGE_ADULT = "å¤§äºº/é’å°‘å¹´";
+			LanguageClass.INFO_AGE_CHILD = "å°äºº / è€äºº";
+			LanguageClass.INFO_AGE_BABY = "3æ­³ æœªæº€ç„¡æ–™";
+			LanguageClass.INFO_OPTION_NONE = "å„ªå¾…æ¡ä»¶ãªã—";
+			LanguageClass.INFO_OPTION_HANDICAPPED = "éšœå®³è€…å„ªå¾…";
+			LanguageClass.INFO_OPTION_HONORABLE = "å›½å®¶åŠŸåŠ´è€…å„ªå¾…";
+			LanguageClass.INFO_OPTION_MULTICHILD = "å¤šå­å®¶åº­å„ªå¾…";
+			LanguageClass.INFO_OPTION_PREGNANCY = "å¦Šå©¦å„ªå¾…";
+			LanguageClass.PRINT_TOTALNUMBER = "ç·è³¼å…¥æ•°é‡ : ";
+			LanguageClass.PRINT_TOTALPRICE = "ç·æ”¯æ‰•é‡‘é¡ : ";
 		}
 	}
-}
+}	

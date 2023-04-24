@@ -10,13 +10,13 @@ public class PrintClass {
 		
 		System.out.println("===================================================================");
 		for (int i = 0; i < infoArray.size(); i++) {
-			System.out.printf("%s   %s   %s%s%5s%d   %s\n", infoArray.get(i).getDayIndex_info(), infoArray.get(i).getAgeIndex_info(),
-					"\\", ConstClass.decimalFormat.format(infoArray.get(i).getTicketPrice_info()), "X", infoArray.get(i).getNumTicket_info(), infoArray.get(i).getOption_info());
+			System.out.printf("%s   %s%9s%s%5s%d%21s\n", infoArray.get(i).getDayIndex_info(), infoArray.get(i).getAgeIndex_info(),
+					 ConstClass.decimalFormat.format(infoArray.get(i).getTicketPrice_info()), "won", "X", infoArray.get(i).getNumTicket_info(), infoArray.get(i).getOption_info());
 			sumTicketPrice += (infoArray.get(i).getNumTicket_info() * infoArray.get(i).getTicketPrice_info()); 
 			sumTicketNum += infoArray.get(i).getNumTicket_info();
 		}
 		System.out.printf("%s%d\n", LanguageClass.PRINT_TOTALNUMBER, sumTicketNum);
-		System.out.printf("%s\\%s\n", LanguageClass.PRINT_TOTALPRICE, ConstClass.decimalFormat.format(sumTicketPrice));
+		System.out.printf("%s%swon\n", LanguageClass.PRINT_TOTALPRICE, ConstClass.decimalFormat.format(sumTicketPrice));
 		System.out.println("===================================================================");
 
 	}
