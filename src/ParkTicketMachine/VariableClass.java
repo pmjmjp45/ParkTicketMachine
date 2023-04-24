@@ -11,6 +11,8 @@ public class VariableClass {
 	private int birthMonth;
 	private int birthDay;
 	private int generation;
+	// numTicket
+	private int numTicket;
 	
 	private int months[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 	
@@ -64,6 +66,26 @@ public class VariableClass {
 		}
 		return numBool;
 	}
+	
+	public boolean setNumTicket(int inputNumTicket, int option) {
+		boolean numTicketBool;
+		
+		if (inputNumTicket > 0) {
+			if (option == ConstClass.HANDICAPPED&& inputNumTicket > ConstClass.HANDICAPPED_LIMIT) {
+				numTicketBool = false;
+			} else if (option == ConstClass.HONORABLE && inputNumTicket > ConstClass.HONORABLE_LIMIT) {
+				numTicketBool = false;
+			}
+			else if (option == ConstClass.PREGNANT && inputNumTicket > ConstClass.PREGNANT_LIMIT) {
+				numTicketBool = false;
+			} else
+				numTicketBool = true;
+				this.numTicket = inputNumTicket;
+		} else
+			numTicketBool = false;
+		
+		return numTicketBool;
+	}
 
 	public int getDateYear() {
 		return dateYear;
@@ -91,6 +113,10 @@ public class VariableClass {
 
 	public int getGeneration() {
 		return generation;
+	}
+
+	public int getNumTicket() {
+		return numTicket;
 	}
 
 }

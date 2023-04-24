@@ -46,12 +46,12 @@ public class InputClass {
 		return option;
 	}
 	
-	public int inputNumTicket() { // input number of ticket
+	public int inputNumTicket(int option) { // input number of ticket
 		int numTicket = 0;
 		while (true) {
 			P.print_numTicket();
 			numTicket = scanner.nextInt();
-			if (numTicket >= 1) break;
+			if (V.setNumTicket(numTicket, option) == true) break;
 			P.printError();
 		}
 		return numTicket;

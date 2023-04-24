@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Main {
 
-	private static PrintClass P = null;
-	private static InputClass I = null;
-	private static VariableClass V = null;
-	private static IndexClass X = null;
-	private static InfoClass info = null;
+	private PrintClass P = null;
+	private InputClass I = null;
+	private VariableClass V = null;
+	private IndexClass X = null;
+	private InfoClass info = null;
 	
 	public Main() {
 		P = new PrintClass();
@@ -21,7 +21,7 @@ public class Main {
 		Main M = new Main();
 		ArrayList<InfoClass> infolist = new ArrayList<>();
 		// date
-		M.V.setDate(Main.I.inputDay());
+		M.V.setDate(M.I.inputDay());
 		int dayIndex = M.X.getDayIndex(M.V.getDateYear(), M.V.getDateMonth(), M.V.getDateDay());
 		
 		do {
@@ -37,11 +37,12 @@ public class Main {
 			int ticketPrice = M.X.getTicketPrice(option, ageIndex, dayIndex);
 			
 			// number of ticket
-			int numTicket = M.I.inputNumTicket(); 
+			M.V.setNumTicket(M.I.inputNumTicket(option), option);
+			int numTicket = M.V.getNumTicket();
 			
 			// save ticket information
-			info = new InfoClass(dayIndex, ageIndex, ticketPrice, numTicket, option);
-			infolist.add(info);
+			M.info = new InfoClass(dayIndex, ageIndex, ticketPrice, numTicket, option);
+			infolist.add(M.info);
 			
 			// print ticket information
 			M.P.printInfo(infolist);

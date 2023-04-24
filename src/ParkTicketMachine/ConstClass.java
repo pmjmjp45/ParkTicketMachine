@@ -19,5 +19,14 @@ public class ConstClass {
 	
 	///////Continue or End
 	static final int CONTINUE = 1;
+	
+	///////// option
+	static final int HANDICAPPED = 2;
+	static final int HONORABLE = 3;
+	static final int PREGNANT = 5;
+	////////option - number limit
+	static final int HANDICAPPED_LIMIT = 2;
+	static final int HONORABLE_LIMIT = 2;
+	static final int PREGNANT_LIMIT = 1;
 
 }

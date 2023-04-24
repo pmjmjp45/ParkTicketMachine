@@ -51,4 +51,7 @@ public class PrintClass {
 		System.out.println("error! Please enter again");
 	}
 	
+	public void printError_Limit() {
+		System.out.println("error! Please check the limitation on the discount option");
+	}
 }
