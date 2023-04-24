@@ -1,5 +1,7 @@
 package ParkTicketMachine;
 
+import java.text.DecimalFormat;
+
 public class ConstClass {
 	///////////ticket price
 	static final int STANDARD_TICKET[][] = {{62000,68000}, {52000,58000}};  //Adult(weekday, weekend) ,child(weekday, weekend)
@@ -24,9 +26,14 @@ public class ConstClass {
 	static final int HANDICAPPED = 2;
 	static final int HONORABLE = 3;
 	static final int PREGNANT = 5;
+	
 	////////option - number limit
 	static final int HANDICAPPED_LIMIT = 2;
 	static final int HONORABLE_LIMIT = 2;
 	static final int PREGNANT_LIMIT = 1;
+	
+	/////////Decimal Format
+	static DecimalFormat decimalFormat = new DecimalFormat("###,###,###,###,###");
+
 
 }

@@ -13,6 +13,11 @@ public class InputClass {
 		scanner = new Scanner(System.in);
 	}
 	
+	public int InputLangSelect() {
+		P.print_langSelect();
+		return scanner.nextInt();
+	}
+	
 	public String inputDay() { // input day
 		String date = "";
 		while (true) {
@@ -52,7 +57,7 @@ public class InputClass {
 			P.print_numTicket();
 			numTicket = scanner.nextInt();
 			if (V.setNumTicket(numTicket, option) == true) break;
-			P.printError();
+			P.printError_Limit();
 		}
 		return numTicket;
 	}

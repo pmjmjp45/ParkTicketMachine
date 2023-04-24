@@ -6,52 +6,58 @@ public class PrintClass {
 	
 	public void printInfo(ArrayList<InfoClass> infoArray) {
 		int sumTicketPrice = 0;
+		int sumTicketNum = 0;
 		
 		System.out.println("===================================================================");
 		for (int i = 0; i < infoArray.size(); i++) {
-			System.out.printf("%s   %s   %8dwon%5s%d   %s\n", infoArray.get(i).getDayIndex_info(), infoArray.get(i).getAgeIndex_info(),
-					infoArray.get(i).getTicketPrice_info(), "X", infoArray.get(i).getNumTicket_info(), infoArray.get(i).getOption_info());
+			System.out.printf("%s   %s   %s%s%5s%d   %s\n", infoArray.get(i).getDayIndex_info(), infoArray.get(i).getAgeIndex_info(),
+					"\\", ConstClass.decimalFormat.format(infoArray.get(i).getTicketPrice_info()), "X", infoArray.get(i).getNumTicket_info(), infoArray.get(i).getOption_info());
 			sumTicketPrice += (infoArray.get(i).getNumTicket_info() * infoArray.get(i).getTicketPrice_info()); 
+			sumTicketNum += infoArray.get(i).getNumTicket_info();
 		}
-		System.out.printf("Total price : %d\n", sumTicketPrice);
+		System.out.printf("%s%d\n", LanguageClass.PRINT_TOTALNUMBER, sumTicketNum);
+		System.out.printf("%s\\%s\n", LanguageClass.PRINT_TOTALPRICE, ConstClass.decimalFormat.format(sumTicketPrice));
 		System.out.println("===================================================================");
 
 	}
+	public void print_langSelect() {
+		System.out.println("Language Select\n0: English / 1: Korean");
+	}
 
 	public void print_inputDay() {
-		System.out.println("Enter the date you visit\nex)20230413");
+		System.out.println(LanguageClass.INPUT_DAY_PRINT);
 	}
 	
 	public void print_inputBirth() {
-		System.out.println("Enter the 7 digits of your social number\nex)9004052");
+		System.out.println(LanguageClass.INPUT_BIRTH_PRINT);
 	}
 	
 	public void print_option() {
-		System.out.println("=====Discout Option=====");
-		System.out.println("1. no discount");
-		System.out.println("2. Handicapped discount");
-		System.out.println("3. Honorable act");
-		System.out.println("4. Multichild discount");
-		System.out.println("5. Pregnancy discount");
+		System.out.println(LanguageClass.MENU_TITLE);
+		System.out.println(LanguageClass.MENU_1);
+		System.out.println(LanguageClass.MENU_2);
+		System.out.println(LanguageClass.MENU_3);
+		System.out.println(LanguageClass.MENU_4);
+		System.out.println(LanguageClass.MENU_5);
 	}
 	
 	public void print_numTicket() {
-		System.out.println("How many ticket do you want?");
+		System.out.println(LanguageClass.INPUT_NUMTICKET_PRINT);
 	}
 	
 	public void print_continueOrEnd() {
-		System.out.println("Continue : 1 / End : 0");
+		System.out.println(LanguageClass.INPUT_CONTINUEOREND_PRINT);
 	}
 	
 	public void print_end() {
-		System.out.println("Thank you");
+		System.out.println(LanguageClass.PRINT_ENDMSG);
 	}
 	
 	public void printError() {
-		System.out.println("error! Please enter again");
+		System.out.println(LanguageClass.PRINT_ERROR);
 	}
 	
 	public void printError_Limit() {
-		System.out.println("error! Please check the limitation on the discount option");
+		System.out.println(LanguageClass.PRINT_ERROR_LIMIT);
 	}
 }

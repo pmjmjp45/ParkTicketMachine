@@ -18,19 +18,19 @@ public class InfoClass {
 
 	public String getDayIndex_info() {
 		if (dayIndex_info.equals("0")) {
-			return "weekday";
+			return LanguageClass.INFO_DAY_WEEKDAY;
 		} else {
-			return "weekend";
+			return LanguageClass.INFO_DAY_WEEKEND;
 		}
 	}
 
 	public String getAgeIndex_info() {
 		if (ageIndex_info.equals("0")) {
-			return "adult/teenager";
+			return LanguageClass.INFO_AGE_ADULT;
 		} else if (ageIndex_info.equals("1")){
-			return "child / elders";
+			return LanguageClass.INFO_AGE_CHILD;
 		} else {
-			return "baby  **free**";
+			return LanguageClass.INFO_AGE_BABY;
 		}
 	}
 
@@ -45,15 +45,15 @@ public class InfoClass {
 
 	public String getOption_info() {
 		if (option_info.equals("1")) {
-			return "no discount";
+			return LanguageClass.INFO_OPTION_NONE;
 		} else if (option_info.equals("2")) {
-			return("Handicapped discount");
+			return LanguageClass.INFO_OPTION_HANDICAPPED;
 		} else if (option_info.equals("3")) {
-			return("Honorable act");
+			return LanguageClass.INFO_OPTION_HONORABLE;
 		} else if (option_info.equals("4")) {
-			return("Multichild discount");
+			return LanguageClass.INFO_OPTION_MULTICHILD;
 		} else {
-			return("Pregnancy discount");  
+			return LanguageClass.INFO_OPTION_PREGNANCY;  
 		}
 	}
 }
