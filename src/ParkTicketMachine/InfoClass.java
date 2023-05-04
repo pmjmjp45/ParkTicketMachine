@@ -38,7 +38,6 @@ public class InfoClass {
 		return ticketPrice_info;
 	}
 
-
 	public int getNumTicket_info() {
 		return numTicket_info;
 	}

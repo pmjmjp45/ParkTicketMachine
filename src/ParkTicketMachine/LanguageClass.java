@@ -27,6 +27,16 @@ public class LanguageClass {
 	public static String INFO_OPTION_HONORABLE;
 	public static String INFO_OPTION_MULTICHILD;
 	public static String INFO_OPTION_PREGNANCY;
+	public static String INPUT_MODE_PRINT;
+	public static String INPUT_ANAL_MENU;
+	public static String INPUT_ANAL_DATE;
+	public static String INPUT_ANAL_DAYTYPE;
+	public static String INPUT_ANAL_OPTION;
+	public static String INPUT_ANAL_END;
+	public static String PRINT_ANAL_DATE;
+	public static String PRINT_ANAL_DAYTYPE;
+	public static String PRINT_ANAL_OPTION;
+	public static String PRINT_ANAL_TOTAL_SALES;
 
 	
 	public void setLanguage(String langSelect) {
@@ -35,6 +45,7 @@ public class LanguageClass {
 	
 	public void language() {
 		if (LANGUAGE.equals("US")) {
+			LanguageClass.INPUT_MODE_PRINT = "1: Ticket Purchase / 2. Sales Report";
 			LanguageClass.INPUT_DAY_PRINT = "Enter the date you visit\nex)20230413";
 			LanguageClass.INPUT_BIRTH_PRINT = "Enter the 7 digits of your social number\nex)9004052";
 			LanguageClass.MENU_TITLE = "=====Discout Option=====";
@@ -60,8 +71,18 @@ public class LanguageClass {
 			LanguageClass.INFO_OPTION_PREGNANCY = "Pregnancy discount";
 			LanguageClass.PRINT_TOTALNUMBER = "Total Amount : ";
 			LanguageClass.PRINT_TOTALPRICE = "Total Price : ";
-			
+			LanguageClass.INPUT_ANAL_MENU = "===Which report do you want?===";
+			LanguageClass.INPUT_ANAL_DATE = "1. Daily Sales Report";
+			LanguageClass.INPUT_ANAL_DAYTYPE = "2. Sales Report sorted by Daytype";
+			LanguageClass.INPUT_ANAL_OPTION =  "3. Sales Report sorted by Option";
+			LanguageClass.INPUT_ANAL_END = "if you want to exit, press 0";
+			LanguageClass.PRINT_ANAL_DATE = "Daily Sales Report";
+			LanguageClass.PRINT_ANAL_DAYTYPE = "Sales Report sorted by Daytype";
+			LanguageClass.PRINT_ANAL_OPTION = "Sales Report sorted by Options";
+			LanguageClass.PRINT_ANAL_TOTAL_SALES = "Total Sales";
+
 		} else if (LANGUAGE.equals("KR")) {
+			LanguageClass.INPUT_MODE_PRINT = "1: 티켓 구매 / 2. 매출 분석";
 			LanguageClass.INPUT_DAY_PRINT = "방문할 날짜를 고르세요\n예시)20230413";
 			LanguageClass.INPUT_BIRTH_PRINT = "주민등록번호 7자리를 입력하세요\n예시)9004052";
 			LanguageClass.MENU_TITLE = "=====우대 사항=====";
@@ -87,8 +108,18 @@ public class LanguageClass {
 			LanguageClass.INFO_OPTION_PREGNANCY = "임산부 우대";
 			LanguageClass.PRINT_TOTALNUMBER = "총 구매 수량 : ";
 			LanguageClass.PRINT_TOTALPRICE = "총 결제 금액 : ";
+			LanguageClass.INPUT_ANAL_MENU = "===매출 분석을 선택하여 주십시오===";
+			LanguageClass.INPUT_ANAL_DATE = "1. 일별 매출 분석";
+			LanguageClass.INPUT_ANAL_DAYTYPE = "2. 권종별 매출 분석";
+			LanguageClass.INPUT_ANAL_OPTION =  "3. 할인 우대별 매출 분석";
+			LanguageClass.INPUT_ANAL_END = "종료를 원하시면 0을 눌러주세요";
+			LanguageClass.PRINT_ANAL_DATE = "일별 매출 분석";
+			LanguageClass.PRINT_ANAL_DAYTYPE = "권종별 매출 분석";
+			LanguageClass.PRINT_ANAL_OPTION = "할인 우대별 매출 분석";
+			LanguageClass.PRINT_ANAL_TOTAL_SALES = "총 매출";
 			
 		} else if (LANGUAGE.equals("JP")) {
+			LanguageClass.INPUT_MODE_PRINT = "1：チケット購入 / 2：売上分析";
 			LanguageClass.INPUT_DAY_PRINT = "訪問する日を選びなさい\n例) 20230413";
 			LanguageClass.INPUT_BIRTH_PRINT = "住民登録番号の7桁を入力してください\n例）9004052";
 			LanguageClass.MENU_TITLE = "=====優待条件=====";
@@ -114,6 +145,16 @@ public class LanguageClass {
 			LanguageClass.INFO_OPTION_PREGNANCY = "妊婦優待";
 			LanguageClass.PRINT_TOTALNUMBER = "総購入数量 : ";
 			LanguageClass.PRINT_TOTALPRICE = "総支払金額 : ";
+			LanguageClass.INPUT_ANAL_MENU = "売上分析を選択してください";
+			LanguageClass.INPUT_ANAL_DATE = "1. 日次売上分析";
+			LanguageClass.INPUT_ANAL_DAYTYPE = "2. 券種別売上分析";
+			LanguageClass.INPUT_ANAL_OPTION = "3. 割引優待別売上分析";
+			LanguageClass.INPUT_ANAL_END = "終了を希望される場合は、0を押してください";
+			LanguageClass.PRINT_ANAL_DATE = "日次売上分析";
+			LanguageClass.PRINT_ANAL_DAYTYPE = "券種別売上分析";
+			LanguageClass.PRINT_ANAL_OPTION = "割引優待別売上分析";
+			LanguageClass.PRINT_ANAL_TOTAL_SALES = "総売上";
+
 		}
 	}
 }	

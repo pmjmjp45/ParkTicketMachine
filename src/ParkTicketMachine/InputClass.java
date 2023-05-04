@@ -13,6 +13,16 @@ public class InputClass {
 		scanner = new Scanner(System.in);
 	}
 	
+	public int inputMode() {
+		int mode = 0;
+		while (true) {
+			P.print_inputMode();
+			mode = scanner.nextInt();
+			if (mode == 1 || mode == 2) break;
+			P.printError();
+		}
+		return mode;
+	}
 	public String inputDay() { // input day
 		String date = "";
 		while (true) {
@@ -66,5 +76,16 @@ public class InputClass {
 			P.printError();
 		}
 		return con;
+	}
+	
+	public int inputSelectAnal() {
+		int select = 0;
+		while(true) {
+			P.print_selectAnal();
+			select = scanner.nextInt();
+			if (select >= 0 && select <= 3) break;
+			P.printError();
+		}
+		return select;
 	}
 }

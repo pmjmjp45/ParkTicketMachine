@@ -24,6 +24,9 @@ public class PrintClass {
 		System.out.println("Language Select\n0: English / 1: Korean");
 	}
 
+	public void print_inputMode() {
+		System.out.println(LanguageClass.INPUT_MODE_PRINT);
+	}
 	public void print_inputDay() {
 		System.out.println(LanguageClass.INPUT_DAY_PRINT);
 	}
@@ -51,6 +54,14 @@ public class PrintClass {
 	
 	public void print_end() {
 		System.out.println(LanguageClass.PRINT_ENDMSG);
+	}
+	
+	public void print_selectAnal() {
+		System.out.println(LanguageClass.INPUT_ANAL_MENU);
+		System.out.println(LanguageClass.INPUT_ANAL_DATE);
+		System.out.println(LanguageClass.INPUT_ANAL_DAYTYPE);
+		System.out.println(LanguageClass.INPUT_ANAL_OPTION);
+		System.out.println(LanguageClass.INPUT_ANAL_END);
 	}
 	
 	public void printError() {

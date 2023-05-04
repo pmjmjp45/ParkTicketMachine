@@ -3,6 +3,7 @@ package ParkTicketMachine;
 public class VariableClass {
 
 	// date
+	private String date;
 	private int dateYear;
 	private int dateMonth;
 	private int dateDay;
@@ -12,8 +13,6 @@ public class VariableClass {
 	private int birthDay;
 	private int generation;
 	private int gender;
-	// numTicket
-	private int numTicket;
 	
 	private int months[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 	
@@ -31,6 +30,7 @@ public class VariableClass {
 			if ((month >=1 && month <= 12) // month validation
 					&& (day >=1 && day <= months[month - 1])) { // day validation 
 				dayBool = true;
+				this.date = date;
 				this.dateYear = year;
 				this.dateMonth = month;
 	            this.dateDay = day;
@@ -101,11 +101,14 @@ public class VariableClass {
 				numTicketBool = false;
 			} else
 				numTicketBool = true;
-				this.numTicket = inputNumTicket;
 		} else
 			numTicketBool = false;
 		
 		return numTicketBool;
+	}
+
+	public String getDate() {
+		return date;
 	}
 
 	public int getDateYear() {
@@ -134,10 +137,6 @@ public class VariableClass {
 
 	public int getGeneration() {
 		return generation;
-	}
-
-	public int getNumTicket() {
-		return numTicket;
 	}
 
 }

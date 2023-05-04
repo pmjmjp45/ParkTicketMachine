@@ -38,5 +38,4 @@ public class ConstClass {
 	/////////Decimal Format
 	static DecimalFormat decimalFormat = new DecimalFormat("###,###,###,###,###");
 
-
 }
